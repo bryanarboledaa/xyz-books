@@ -1,0 +1,9 @@
+<p>Search Results:</p>
+
+<% @results.each do |result| %>
+  <%= result.title %> <br>
+  <%= result.isbn_10 %> <br>
+  <%= result.isbn_13 %> <br>
+  <%= result.publication_year %> <br>
+  <%= result.price %>
+<% end %>
