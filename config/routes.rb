@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   root 'static_page#index'
   get '/search' => 'static_page#search'
+  get '/books/:isbn' => 'static_page#api_book'
 end
