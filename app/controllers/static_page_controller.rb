@@ -15,8 +15,15 @@ class StaticPageController < ApplicationController
 
   def api_book
     parameter = params[:isbn]
-    @results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
+    results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
 
-    render json: @results
+    mapped = results.map { |result| {
+      id: result.id,
+      publisher: result.publisher.name,
+      author: "#{result.author.first_name + " " + result.author.last_name}"
+    } }
+
+    render json: mapped
+    
   end
 end
