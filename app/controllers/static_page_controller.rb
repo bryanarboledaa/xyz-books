@@ -17,13 +17,22 @@ class StaticPageController < ApplicationController
     parameter = params[:isbn]
     results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
 
-    mapped = results.map { |result| {
-      id: result.id,
-      publisher: result.publisher.name,
-      author: "#{result.author.first_name + " " + result.author.last_name}"
-    } }
+    if results.exists?
+      mapped_result = 
+        results.map { |result| {
+          id: result.id,
+          title: result.title,
+          author: result.authors.pluck(:first_name, :last_name).map { |name| name.join(" ") }.join(", "),
+          edition: result.edition,
+          price: result.price,
+          isbn_10: result.isbn_10,
+          isbn_13: result.isbn_13,
+          publisher: result.publisher.name
+        } }
 
-    render json: mapped
-    
+      render json: mapped_result
+    else
+      render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found
+    end
   end
 end

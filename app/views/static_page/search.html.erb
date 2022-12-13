@@ -1,9 +1,10 @@
 <p>Search Results:</p>
 
 <% @results.each do |result| %>
-  <%= result.title %> <br>
-  <%= result.isbn_10 %> <br>
-  <%= result.isbn_13 %> <br>
-  <%= result.publication_year %> <br>
-  <%= result.price %>
+ Title: <%= result.title %> <br>
+ By <%= result.authors.pluck(:first_name, :last_name).join(" ") %> <br>
+ ISBN-10: <%= result.isbn_10 %> <br>
+ ISBN-13: <%= result.isbn_13 %> <br>
+ Publication Year <%= result.publication_year %> <br>
+ Price: <%= result.price %>
 <% end %>

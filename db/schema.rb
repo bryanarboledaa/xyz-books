@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_064902) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_081606) do
   create_table "authors", force: :cascade do |t|
-    t.integer "book_id"
     t.string "first_name"
     t.string "last_name"
     t.datetime "created_at", null: false
@@ -20,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_064902) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.integer "author_id"
     t.integer "publisher_id"
     t.string "title"
     t.integer "isbn_10"
@@ -32,6 +30,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_064902) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "books_authors", id: false, force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "joiners", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_joiners_on_author_id"
+    t.index ["book_id"], name: "index_joiners_on_book_id"
+  end
+
   create_table "publishers", force: :cascade do |t|
     t.integer "book_id"
     t.string "name"
@@ -39,4 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_064902) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "joiners", "authors"
+  add_foreign_key "joiners", "books"
 end
