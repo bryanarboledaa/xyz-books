@@ -13,23 +13,32 @@ class StaticPageController < ApplicationController
     end
   end
 
-  def response_404
-    render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found
-  end
+  # def response_404
+  #   render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found and return
+  # end
 
-  def is_valid_isbn_13(isbn)
-    regex = /^(?:ISBN(?:-13)?:?\ *(97(?:8|9)([ -]?)(?=\d{1,5}\2?\d{1,7}\2?\d{1,6}\2?\d)(?:\d\2*){9}\d))$/i
+  # def is_valid_isbn_13(isbn)
+  #   regex = /^(?:ISBN(?:-13)?:?\ *(97(?:8|9)([ -]?)(?=\d{1,5}\2?\d{1,7}\2?\d{1,6}\2?\d)(?:\d\2*){9}\d))$/i
 
-    if !isbn.match(regex)
-      render :file => "#{Rails.root}/public/400.html", layout: false, status: :bad_request
-    end
-  end
+  #   if !isbn.match(regex)
+  #     render :file => "#{Rails.root}/public/400.html", layout: false, status: :bad_request and return
+  #   end
+  # end
+
+  # def check_and_hyphenate(isbn)
+  #   if ISBN_Tools.is_valid?(isbn)
+  #     puts ISBN_Tools.hyphenate(isbn)
+  #   else
+  #     cksum = ISBN_Tools.compute_check_digit(isbn)
+  #     puts "Invalid ISBN number [#{isbn}]. Checksum should be #{cksum}"
+  #   end
+  # end
 
   def api_book
     parameter = params[:isbn]
     results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
 
-      if is_valid_isbn_13(parameter)
+      if ISBN_Tools.is_valid?(parameter)
         if results.exists?
           mapped_result = 
           results.map { |result| {
@@ -43,10 +52,12 @@ class StaticPageController < ApplicationController
             publisher: result.publisher.name
           } }
 
-          render json: mapped_result  
+          render json: mapped_result and return
         else
-          response_404
+          render :file => "#{Rails.root}/public/404.html", layout: false, status: :not_found and return
         end
+      else
+        render :file => "#{Rails.root}/public/400.html", layout: false, status: :bad_request and return
       end 
   end
 end
