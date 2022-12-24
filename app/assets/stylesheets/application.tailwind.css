@@ -11,3 +11,51 @@
 }
 
 */
+
+.nav-font {
+  color: #161960;
+}
+
+.header-font, .header-font3 {
+  color: #151962;
+}
+
+.header-font2 {
+  color: #6d6bcc;
+}
+
+.svg {
+  transform: rotate(-90deg);
+}
+
+.svg2 {
+  transform: rotate(-90deg);
+}
+
+.save {
+  background-size: contain;
+  background-position: center;
+  background-image: url("../assets/mask_group_4.png");
+  color: #fff;
+  padding: 10px 0;
+}
+
+.save-text {
+  text-align: center;
+}
+
+.main-container {
+  background-position: center;
+  background-image: url("../assets/banner-bg.png");
+}
+
+#inquire {
+  font-family: cursive;
+  color: #5fd2fa;
+  transform: rotate(-10deg);
+}
+
+.hero-illustration, .group-pic {
+  max-width: 80%;
+  height: auto;
+}
