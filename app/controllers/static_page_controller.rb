@@ -9,7 +9,7 @@ class StaticPageController < ApplicationController
       redirect_to root_path and return
     else
       parameter = params[:search]
-      @results = Book.where("books.title LIKE ?", ["%#{parameter}%"])
+      @results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
     end
   end
 

@@ -16,22 +16,26 @@
 
 # book2.save
 
+book1 = Book.create(publisher_id: 1, title: "American Elf", isbn_10:  1891830856, isbn_13: 9781891830853, publication_year: 2004, edition: "Book 2", price: 1000, created_at: Time.now, updated_at: Time.now)
+
+book1.save
+
 
 # authors
 
-author1 = Author.create(first_name: "Joel", last_name: "Hartse")
+# author1 = Author.create(first_name: "Joel", last_name: "Hartse")
 
-author1.save
+# author1.save
 
-author2 = Author.create(first_name: "Hannah P.", last_name: "Templer")
+# author2 = Author.create(first_name: "Hannah P.", last_name: "Templer")
 
-author2.save
+# author2.save
 
 
 
 
 # publishers
 
-# publisher1 = Publisher.create(book_id: 1, name: "Paste Magazine")
+publisher1 = Publisher.create(book_id: 1, name: "Paste Magazine")
 
-# publisher1.save
+publisher1.save
