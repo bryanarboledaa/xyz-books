@@ -9,7 +9,7 @@ rails-7.0.4
 
 Extra Ruby gems used:
 
-isbn-tool (manipulation of isbn numbers) <br>
+isbn-tool (for manipulation of isbn numbers) <br>
 tailwind ui (css framework)
 
 After clone-do:
