@@ -7,6 +7,11 @@ Tool-versions:
 ruby-3.1.3 <br>
 rails-7.0.4
 
+Extra Ruby gems used:
+
+isbn-tool (manipulation of isbn numbers) <br>
+tailwind ui (css framework)
+
 After clone-do:
 
 run
