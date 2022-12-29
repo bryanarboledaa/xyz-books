@@ -6,36 +6,68 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# books
+#publishers
 
-# book1 = Book.create(publisher_id: 1, title: "American Elf", isbn_10:  1891830856, isbn_13: 9781891830853, publication_year: 2004, edition: "Book 2", price: 1000, created_at: Time.now, updated_at: Time.now)
+publisher1 = Publisher.create!(name: "Paste Magazine", created_at: Time.now, updated_at: Time.now)
 
-# book1.save
+publisher2 = Publisher.create!(name: "Publishers Weekly", created_at: Time.now, updated_at: Time.now)
 
-# book2 = Book.create(publisher_id: 1, title: "Hunter X Hunter", isbn_10:  1891830856, isbn_13: 9781891830853, publication_year: 2005, edition: "Season 2", price: 2500, created_at: Time.now, updated_at: Time.now)
+publisher3 = Publisher.create!(name: "Graywolf Press", created_at: Time.now, updated_at: Time.now)
 
-# book2.save
+publisher4 = Publisher.create!(name: "McSweeney's", created_at: Time.now, updated_at: Time.now)
 
-book1 = Book.create(publisher_id: 1, title: "American Elf", isbn_10:  1891830856, isbn_13: 9781891830853, publication_year: 2004, edition: "Book 2", price: 1000, created_at: Time.now, updated_at: Time.now)
+#books
 
-book1.save
+book1 = Book.create!(publisher: publisher1, title: "American Elf", isbn_10: "1-891-83085-6", isbn_13: "978-1-891830-85-3", publication_year: 2004, edition: "Book 2", price: 1000, image_url: "https://www.topshelfcomix.com/catalog/covers/american_elf_4_lg.jpg",created_at: Time.now, updated_at: Time.now)
+
+book2 = Book.create!(publisher: publisher2, title: "Cosmoknights", isbn_10: "1-603-09454-7", isbn_13: "978-1-60309-454-2", publication_year: 2019, edition: "Book 1", price: 2000, image_url: "https://books.google.com.ph/books/publisher/content?id=ln6fDwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&sig=ACfU3U1R197Y8wwEXeilY8nMYgY-dABzGw&w=1280", created_at: Time.now, updated_at: Time.now)
+
+book3 = Book.create!(publisher: publisher3, title: "Essex County", isbn_10: "1-603-09038-X", isbn_13: "978-1-60309-038-4", publication_year: 1990, price: 500, image_url: "https://books.google.com.ph/books/content?id=bvI9nOzxcwoC&pg=PP1&img=1&zoom=3&hl=en&sig=ACfU3U3hKLO3Th53X60vGL3qSzFXgwvW2g&w=1280",created_at: Time.now, updated_at: Time.now)
+
+book4 = Book.create!(publisher: publisher3, title: "Hey Mister (Vol 1)", isbn_10: "1-891-83002-3", isbn_13: "978-1-891830-02-0", publication_year: 2000, edition: "After School Special", price: 1200, image_url: "https://www.topshelfcomix.com/catalog/covers/afterschool_lg.jpg",created_at: Time.now, updated_at: Time.now)
+
+book5 = Book.create!(publisher: publisher4, title: "The Underwater Welder", isbn_10: "1-603-09398-2", isbn_13: "978-1-60309-398-9", publication_year: 2004, edition: "Book 2", price: 1000, image_url: "../assets/the-underwater-welder.png",created_at: Time.now, updated_at: Time.now)
+
+#authors
+
+author1 = Author.create!(first_name: "Joel", last_name: "Hartse", created_at: Time.now, updated_at: Time.now)
+
+author2 = Author.create!(first_name: "Hannah P.", last_name: "Templer", created_at: Time.now, updated_at: Time.now)
+
+author3 = Author.create!(first_name: "Marguerite Z.", last_name: "Duras", created_at: Time.now, updated_at: Time.now)
+
+author4 = Author.create!(first_name: "Kingsley", last_name: "Amis", created_at: Time.now, updated_at: Time.now)
+
+author5 = Author.create!(first_name: "Fannie Peters", last_name: "Flagg", created_at: Time.now, updated_at: Time.now)
+
+author6 = Author.create!(first_name: "Camille Byron", last_name: "Paglia", created_at: Time.now, updated_at: Time.now)
+
+author7 = Author.create!(first_name: "Rainer Steel", last_name: "Rilke", created_at: Time.now, updated_at: Time.now)
+
+#joiners (datasets association)
+
+joiner1 = Joiner.create!(book: book1, author: author1, created_at: Time.now, updated_at: Time.now)
+
+joiner2 = Joiner.create!(book: book1, author: author2, created_at: Time.now, updated_at: Time.now)
+
+joiner3 = Joiner.create!(book: book1, author: author3, created_at: Time.now, updated_at: Time.now)
+
+joiner4 = Joiner.create!(book: book2, author: author4, created_at: Time.now, updated_at: Time.now)
+
+joiner5 = Joiner.create!(book: book3, author: author4, created_at: Time.now, updated_at: Time.now)
+
+joiner6 = Joiner.create!(book: book4, author: author2, created_at: Time.now, updated_at: Time.now)
+
+joiner7 = Joiner.create!(book: book4, author: author5, created_at: Time.now, updated_at: Time.now)
+
+joiner8 = Joiner.create!(book: book4, author: author6, created_at: Time.now, updated_at: Time.now)
+
+joiner9 = Joiner.create!(book: book5, author: author7, created_at: Time.now, updated_at: Time.now)
 
 
-# authors
-
-# author1 = Author.create(first_name: "Joel", last_name: "Hartse")
-
-# author1.save
-
-# author2 = Author.create(first_name: "Hannah P.", last_name: "Templer")
-
-# author2.save
 
 
 
 
-# publishers
 
-publisher1 = Publisher.create(book_id: 1, name: "Paste Magazine")
 
-publisher1.save

@@ -33,7 +33,8 @@
 }
 
 .save {
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-image: url("../assets/mask_group_4.png");
   color: #fff;

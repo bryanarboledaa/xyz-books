@@ -1,15 +1,15 @@
 class StaticPageController < ApplicationController
   
   def index
-    @books = Book.all
   end
 
   def search
-    if params[:search].empty?
-      redirect_to root_path and return
-    else
-      parameter = params[:search]
+    parameter = params[:search]
+
+    if ISBN_Tools.is_valid?(parameter)
       @results = Book.where("books.isbn_10 || books.isbn_13 LIKE ?", ["%#{parameter}%"])
+    else
+      render :file => "#{Rails.root}/public/400.html", layout: false, status: :bad_request and return
     end
   end
 
