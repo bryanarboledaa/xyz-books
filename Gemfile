@@ -29,10 +29,6 @@ gem "jbuilder"
 
 gem 'isbn-tools', '~> 0.1.0'
 
-gem 'isbn', '~> 2.0', '>= 2.0.10'
-
-gem 'isbnify', '~> 1.0', '>= 1.0.4'
-
 gem "byebug"
 
 # Use Redis adapter to run Action Cable in production
