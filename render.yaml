@@ -1,5 +1,5 @@
 databases:
-  - name: xyz_books_production
+  - name: xyz-books/production
     databaseName: xyz-books/production
     user: xyz_books_production_user
 
