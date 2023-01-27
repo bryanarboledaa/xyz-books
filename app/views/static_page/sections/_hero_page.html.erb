@@ -1,79 +1,3 @@
-<%# <div class="hero-main-container pb-12">
-  <div class="hero-page-container flex">
-    <div class="div1 flex flex-1 flex-col ml-12 mt-18 justify-center">
-      <p class="text-5xl font-extrabold header-font">The Cheapest <br> Textbooks</p>
-      <p class="text-2xl font-bold mt-5 header-font2">Save up To 90% On Millions <br> Of Titles</p>
-      <p class="font-semibold header-font3 mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-        sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna.</p>
-      <div class="flex flex-start">
-        <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mt-5">
-          Get Started <img class="svg ml-2" src="../assets/path-329.svg">
-        </button>
-      </div>
-    </div>
-
-    <div class="div2 flex items-end w-3/5 flex-col px-2 py-2 mr-12">
-      <div class="flex flex-1">
-        <p id="inquire" class="font-serif text-sm mt-7 mr-2 text-right">Inquire us now to <br> avail discounts!</p>
-        <img class="h-12 w-auto mr-12" src="../assets/XMLID_2331_.svg">
-      </div>
-      <img class="mt-12 hero-illustration" src="../assets/hero-illustration.svg">
-    </div>
-    <div class="div4"></div>
-  </div>
-
-  <div class="mission-container flex">
-    <div class="div3 flex items-end w-1/2 flex-col">
-      <img class="mt-12 group-pic" src="../assets/group-13597.png">
-    </div>
-    <div class="div4 flex flex-1 flex-col ml-12 mt-18 justify-center">
-      <p class="text-4xl font-extrabold text-white">Our Commitment</p>
-      <p class="text-sm text-white mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br>
-        sed diam nonumy eirmod tempor invidunt ut labore et <br>
-        dolore magna aliquyam erat, sed diam voluptua. At <br>
-        vero eos et accusam et justo duo dolores et ea rebum
-      </p>
-      <div class="flex flex-start">
-        <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-blue-900 px-4 py-2 text-base font-medium text-indigo-400 shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mt-5">
-          Learn More <img class="svg2 ml-2" src="../assets/path-9712.svg">
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="clients-container">
-    <div class="flex flex-center items-center justify-evenly">
-      <p class="text-2xl text-white font-semibold">Trusted By Awesome <span style="color:gold"> Clients </span> </p>
-    </div>
-    <div class="flex w-full justify-evenly items-center mt-10">
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/binance.svg">
-        <p class="font-medium text-white">Binance</p>
-      </div>
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/bitcoin.svg">
-        <p class="font-medium text-white">Bitcoin</p>
-      </div>
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/solana-sol-logo.svg">
-        <p class="font-medium text-white">Solana</p>
-      </div>
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/ethereum.svg">
-        <p class="font-medium text-white">Ethereum</p>
-      </div>
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/tether-usdt-logo.svg">
-        <p class="font-medium text-white">Tether</p>
-      </div>
-      <div class="flex items-center">
-        <img class="h-10 mr-3" src="../assets/xrp.svg">
-        <p class="font-medium text-white">XRP</p>
-      </div>
-    </div>
-  </div>
-</div> %>
-
 <div class="hero-main-container pb-12">
   <div class="relative overflow-hidden pt-2 pb-12">
     <div class="relative">
@@ -97,7 +21,8 @@
         <div class="mt-12 sm:mt-16 lg:mt-0">
          <div class="flex justify-end mr-10 mb-12"> 
            <p id="inquire" class="font-serif text-sm mt-7 mr-2 text-right">Inquire us now to <br> avail discounts!</p>
-           <img class="h-10 w-auto" src="../assets/XMLID_2331_.svg">
+           <%# <img class="h-10 w-auto" src="../assets/XMLID_2331_.svg"> %>
+           <%= image_tag("XMLID_2331_.svg", class: "h-10 w-auto") %>
          </div>
           <img class="w-screen xs:absolute xs:left-0 xs:h-full xs:w-auto xs:max-w-none" src="../assets/hero-illustration.svg" alt="Inbox user interface">
         </div>
