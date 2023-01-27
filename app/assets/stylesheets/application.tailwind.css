@@ -32,7 +32,7 @@
   transform: rotate(-90deg);
 }
 
-#save {
+.save {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -68,7 +68,7 @@
 }
 
 .books-main-container {
-  background-image: url("../assets/blue-bg-2.png");
+  background-image: url(blue-bg-2.png);
   background-position: bottom;
   background-size: cover;
 }
@@ -83,7 +83,7 @@
 }
 
 #input-email {
-  background-image: url("../assets/path-329.svg");
+  background-image: url(path-329.svg);
   background-position: right;
   padding-left: 20px;
   background-size: 20px;
