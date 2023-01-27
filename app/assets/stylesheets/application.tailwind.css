@@ -32,11 +32,11 @@
   transform: rotate(-90deg);
 }
 
-.save {
+#save {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("app/assets/images/mask_group_4.png");
+  background-image: url(mask_group_4.png);
   color: #fff;
   padding: 10px 0;
 }
@@ -48,7 +48,7 @@
 .hero-main-container {
   background-size: cover;
   background-position: center;
-  background-color: black;
+  background-image: url(banner-bg.png);
 }
 
 #inquire {
@@ -68,7 +68,7 @@
 }
 
 .books-main-container {
-  background-image: url("app/assets/images/blue-bg-2.png");
+  background-image: url("../assets/blue-bg-2.png");
   background-position: bottom;
   background-size: cover;
 }
